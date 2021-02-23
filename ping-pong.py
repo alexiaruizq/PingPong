@@ -299,13 +299,48 @@ def dibujarPuerta():
     glVertex2f(-0.25,-0.75)
     glEnd()
     
-def dibujarVentana1():
+def dibujarFigurita1():
     glColor3f(0.57254901960784313725490196078431,0.57254901960784313725490196078431,0.61568627450980392156862745098039)
     glBegin(GL_QUADS)
-    glVertex2f(-0.5,-0.4)
-    glVertex2f(-0.4,-0.4)
-    glVertex2f(-0.4,-0.5)
-    glVertex2f(-0.5,-0.5)
+    glVertex2f(-0.394,+0.40)
+    glVertex2f(-0.400,+0.4)
+    glVertex2f(-0.004,+0.5)
+    glVertex2f(-0.500,+0.5)
+    glEnd()
+
+def dibujarFigurita2():
+    glColor3f(0.57254901960784313725490196078431,0.57254901960784313725490196078431,0.61568627450980392156862745098039)
+    glBegin(GL_QUADS)
+    glVertex2f(0.600,-0.400)
+    glVertex2f(0.500,-0.4)
+    glVertex2f(0.1,-0.500)
+    glVertex2f(0,-0.5)
+    glEnd()
+
+def dibujarBolita():
+    glColor3f(0.93725490196078431372549019607843, 0.84705882352941176470588235294118, 0.71372549019607843137254901960784)
+    glBegin(GL_QUADS)
+    glVertex2f(-0.22,+0.545)
+    glVertex2f(-0.152,+0.545)
+    glVertex2f(-0.125,+0.745)
+    glVertex2f(-0.252,+0.745)
+    glEnd()
+
+def dibujarCirculito1():
+    glColor3f(0.66666666666666666666666666666667,0.72549019607843137254901960784314,0.67843137254901960784313725490196)
+    glBegin(GL_POLYGON)
+    for x in range(360):
+        angulo = x * 3.14159 / 180.0
+        glVertex3f(cos(angulo) * 0.222 + 0.226 , sin(angulo) * 0.222 - 0.999 ,0.0)
+    glEnd()
+
+def dibujarTecho2():
+    glColor3f(0.94509803921568627450980392156863, 0.70980392156862745098039215686275, 0.70980392156862745098039215686275)
+    glBegin(GL_QUADS)
+    glVertex2f(-0.722,+0.344)
+    glVertex2f(0.322,+0.344)
+    glVertex2f(0.125,+0.244)
+    glVertex2f(-0.255,+0.255)
     glEnd()
 
 def dibujar():
@@ -318,8 +353,12 @@ def dibujar():
     dibujarArbol()
     dibujarHojas()
     dibujarTecho()
+    dibujarTecho2()
+    dibujarCirculito1()
+    dibujarBolita()
     dibujarPuerta()
-    dibujarVentana1()
+    dibujarFigurita1()
+    dibujarFigurita2()
     dibujarOvalo()
     dibujarOvalo1()
     dibujarCirculo()
