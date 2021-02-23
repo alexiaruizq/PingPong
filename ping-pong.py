@@ -86,6 +86,8 @@ def actualizar(window):
     checar_colisiones()
     actualizar_pelota(tiempo_delta)
     tiempo_anterior = tiempo_actual
+    
+
 
 def dibujarJugador1():
     global colisionando
@@ -104,6 +106,7 @@ def dibujarJugador1():
     glVertex3f(-0.025, 0.2, 0.0)
     glEnd()
     glPopMatrix()
+    
 
 def dibujarJugador2():
     global colisionando
@@ -140,8 +143,44 @@ def dibujarPelota():
     glEnd()
     glPopMatrix()
 
+def dibujarCirculo():
+    glColor3f(0.66666666666666666666666666666667,0.72549019607843137254901960784314,0.67843137254901960784313725490196)
+    glBegin(GL_POLYGON)
+    for x in range(360):
+        angulo = x * 3.14159 / 180.0
+        glVertex3f(cos(angulo) * 0.2 - 0.6 , sin(angulo) * 0.2 + 0.6 ,0.0)
+    glEnd()
+
+def dibujarOvalo():
+    glColor3f(0.2,1,0.7)
+    glBegin(GL_POLYGON)
+    for x in range(360):
+        angulo = x * 3.14159 / 180.0
+        glVertex3f(cos(angulo) * 0.3 + 0.3 , sin(angulo) * 0.05 + 0.75 ,0.0)
+    glEnd()
+
+def dibujarOvalo1():
+    glColor3f(0.3,0,0.4)
+    glBegin(GL_POLYGON)
+    for x in range(360):
+        angulo = x * 3.14159 / 90.0
+        glVertex3f(cos(angulo) * 0.5 + 0.5 , sin(angulo) * 0.05 + 0.05 ,0.0)
+    glEnd()
+
+def dibujarRayos():
+    glColor3f(0.91764705882352941176470588235294,0.77254901960784313725490196078431,0.70980392156862745098039215686275)
+    glBegin(GL_TRIANGLE_STRIP)
+    for x in range(90):
+        angulo = x
+        glVertex3f(cos(angulo) * 0.25 - 0.6, sin(angulo) * 0.25 + 0.6, 0.0)
+    glEnd()
+
 def dibujar():
     # Rutinas de dibujo
+    dibujarRayos()
+    dibujarOvalo()
+    dibujarOvalo1()
+    dibujarCirculo()
     dibujarJugador1()
     dibujarJugador2()
     dibujarPelota()
