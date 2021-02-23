@@ -167,17 +167,159 @@ def dibujarOvalo1():
         glVertex3f(cos(angulo) * 0.5 + 0.5 , sin(angulo) * 0.05 + 0.05 ,0.0)
     glEnd()
 
-def dibujarRayos():
+def dibujarRueditas():
     glColor3f(0.91764705882352941176470588235294,0.77254901960784313725490196078431,0.70980392156862745098039215686275)
     glBegin(GL_TRIANGLE_STRIP)
     for x in range(90):
         angulo = x
-        glVertex3f(cos(angulo) * 0.25 - 0.6, sin(angulo) * 0.25 + 0.6, 0.0)
+        glVertex3f(cos(angulo) * 0.25 - 0.900, sin(angulo) * 0.25 - 0.999, 0.0)
+    glEnd()
+
+def dibujarRueditas1():
+    glColor3f(0.91764705882352941176470588235294,0.77254901960784313725490196078431,0.70980392156862745098039215686275)
+    glBegin(GL_TRIANGLE_STRIP)
+    for x in range(90):
+        angulo = x
+        glVertex3f(cos(angulo) * 0.25 + 0.900, sin(angulo) * 0.25 - 0.999, 0.25)
+    glEnd()
+
+def dibujarRueditas2():
+    glColor3f(0.91764705882352941176470588235294,0.77254901960784313725490196078431,0.70980392156862745098039215686275)
+    glBegin(GL_TRIANGLE_STRIP)
+    for x in range(90):
+        angulo = x
+        glVertex3f(cos(angulo) * 0.25 - 0.900, sin(angulo) * 0.25 + 0.999, 0.0)
+    glEnd()
+
+def dibujarRueditas3():
+    glColor3f(0.91764705882352941176470588235294,0.77254901960784313725490196078431,0.70980392156862745098039215686275)
+    glBegin(GL_TRIANGLE_STRIP)
+    for x in range(90):
+        angulo = x
+        glVertex3f(cos(angulo) * 0.25 + 0.900, sin(angulo) * 0.25 + 0.999, 0.25)
+    glEnd()
+
+def dibujarArbol():
+    glColor3f(0.98431372549019607843137254901961,0.86274509803921568627450980392157,0.86274509803921568627450980392157)
+    glBegin(GL_QUADS)
+    glVertex2f(0.1,-0.1)
+    glVertex2f(0.5,-0.3)
+    glVertex2f(0.75,-0.6)
+    glVertex2f(0.8,-0.1)
+    glEnd()
+
+def dibujarHojas():
+    glColor3f(0.91764705882352941176470588235294,0.90980392156862745098039215686275,0.70980392156862745098039215686275)
+    glBegin(GL_POLYGON)
+    for x in range(360):
+        angulo = x * 3.14159 / 180.0
+        glVertex3f(cos(angulo) * 0.12 - 0.850 , sin(angulo) * 0.135 - 0.25 ,0.0)
+    glEnd()
+
+def dibujarMarco():
+    #izq
+    glColor3f(0.788,0.596,0.364)
+    glBegin(GL_QUADS)
+    glVertex3f(-1.0,1.0,0) #izqArr
+    glVertex3f(-0.95,1.0,0) #derArr
+    glVertex3f(-0.95,-1.0,0) #derAba
+    glVertex3f(-1.0,-1.0,0) #izqAba
+    glEnd()
+
+    #der
+    glColor3f(0.788,0.596,0.364)
+    glBegin(GL_QUADS)
+    glVertex3f(0.95,1.0,0) #izqArr
+    glVertex3f(1.0,1.0,0) #derArr
+    glVertex3f(1.0,-1.0,0) #derAba
+    glVertex3f(0.95,-1.0,0) #izqAba
+    glEnd()
+
+    #arriba
+    glColor3f(0.788,0.596,0.364)
+    glBegin(GL_QUADS)
+    glVertex3f(-1.0,1.0,0) #izqArr
+    glVertex3f(1.0,1.0,0) #derArr
+    glVertex3f(1.0,0.95,0) #derAba
+    glVertex3f(-1.0,0.95,0) #izqAba
+    glEnd()
+
+    #abajo
+    glColor3f(0.788,0.596,0.364)
+    glBegin(GL_QUADS)
+    glVertex3f(-1.0,-0.95,0) #izqArr
+    glVertex3f(1.0,-0.95,0) #derArr
+    glVertex3f(1.0,0.-1.0,0) #derAba
+    glVertex3f(-1.0,-1.0,0) #izqAba
+    glEnd()
+
+    glColor3f(0.913,0.588,0.478)
+    glBegin(GL_POLYGON)
+    for x in range(360):
+        angulo = x * 3.14159 / 180.0
+        glVertex3f(cos(angulo) * 0.2 - 1.0, sin(angulo) * 0.2 + 1.0 ,0.0)
+    glEnd()
+
+    glColor3f(0.913,0.588,0.478)
+    glBegin(GL_POLYGON)
+    for x in range(360):
+        angulo = x * 3.14159 / 180.0
+        glVertex3f(cos(angulo) * 0.2 + 1.0, sin(angulo) * 0.2 + 1.0 ,0.0)
+    glEnd()
+
+    glColor3f(0.913,0.588,0.478)
+    glBegin(GL_POLYGON)
+    for x in range(360):
+        angulo = x * 3.14159 / 180.0
+        glVertex3f(cos(angulo) * 0.2 - 1.0, sin(angulo) * 0.2 - 1.0 ,0.0)
+    glEnd()
+
+    glColor3f(0.913,0.588,0.478)
+    glBegin(GL_POLYGON)
+    for x in range(360):
+        angulo = x * 3.14159 / 180.0
+        glVertex3f(cos(angulo) * 0.2 + 1.0, sin(angulo) * 0.2 - 1.0 ,0.0)
+    glEnd()
+
+def dibujarTecho():
+    glColor3f(0.94509803921568627450980392156863, 0.70980392156862745098039215686275, 0.70980392156862745098039215686275)
+    glBegin(GL_QUADS)
+    glVertex2f(-0.7,-0.3)
+    glVertex2f(0.3,-0.3)
+    glVertex2f(0.15,-0.2)
+    glVertex2f(-0.55,-0.2)
+    glEnd()
+
+def dibujarPuerta():
+    glColor3f(0.93725490196078431372549019607843, 0.84705882352941176470588235294118, 0.71372549019607843137254901960784)
+    glBegin(GL_QUADS)
+    glVertex2f(-0.25,-0.55)
+    glVertex2f(-0.15,-0.55)
+    glVertex2f(-0.15,-0.75)
+    glVertex2f(-0.25,-0.75)
+    glEnd()
+    
+def dibujarVentana1():
+    glColor3f(0.57254901960784313725490196078431,0.57254901960784313725490196078431,0.61568627450980392156862745098039)
+    glBegin(GL_QUADS)
+    glVertex2f(-0.5,-0.4)
+    glVertex2f(-0.4,-0.4)
+    glVertex2f(-0.4,-0.5)
+    glVertex2f(-0.5,-0.5)
     glEnd()
 
 def dibujar():
     # Rutinas de dibujo
-    dibujarRayos()
+    dibujarRueditas()
+    dibujarRueditas1()
+    dibujarRueditas2()
+    dibujarRueditas3()
+    dibujarMarco()
+    dibujarArbol()
+    dibujarHojas()
+    dibujarTecho()
+    dibujarPuerta()
+    dibujarVentana1()
     dibujarOvalo()
     dibujarOvalo1()
     dibujarCirculo()
